@@ -5,7 +5,10 @@
 //  Created by Ekaterina Abramova on 02.11.2020.
 //
 
+//Удалить элемент с номером k. Добавить после каждого четного элемента массива элемент со значением 0
+
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -38,7 +41,7 @@ int main(int argc, const char * argv[]) {
     if (!flag) {
         cout << "This found not found";
     } else {
-        cout << "Number " << array[i] << " exits and number's index - " << i << endl;
+        cout << "Number " << array[i - 1] << " exits and number's index - " << i << endl;
     }
     cout << endl;
     
@@ -59,7 +62,7 @@ int main(int argc, const char * argv[]) {
     for (i = 0; i < sizeFirstArray; i++) {
         if (array[i] % 2 == 0) {
             sizeFirstArray++;
-            for (r = sizeFirstArray; r > i - 1; r--) {
+            for (r = sizeFirstArray; r > i; r--) {
                 array[r] = array[r - 1];
             }
             array[i] = 0;

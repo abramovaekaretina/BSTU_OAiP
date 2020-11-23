@@ -5,6 +5,8 @@
 //  Created by Ekaterina Abramova on 02.11.2020.
 //
 
+//    Переставить в обратном порядке элементы массива, расположенные между его минимальным и максимальным элементами
+
 #include <iostream>
 #include <ctime>
 
@@ -15,7 +17,7 @@ int main(int argc, const char * argv[]) {
     setlocale(LC_CTYPE, "Russian");
     const int n = 100;
     int array[n];
-    int sizeArray, sizeNewArray = 1, r;
+    int sizeArray;
     cout << "Enter size array : ";
     cin >> sizeArray;
     srand(time(NULL));
@@ -26,33 +28,37 @@ int main(int argc, const char * argv[]) {
         cout << array[i] << ' ';
     }
     
-    for (int i = 1, j = 1; i < sizeArray; i++) {
-        if (i % 7 != 0) {
-            array[j++] = array[i];
-            sizeNewArray++;
-        }
-    }
-    cout << "\n\nArray after deleting : ";
-    for (int i = 0; i < sizeNewArray; i++) {
-        cout << array[i] << ' ';
-    }
-    
-    for (int i = 0; i < sizeNewArray; i++) {
-        if (array[i] % 2 != 0) {
-            sizeNewArray++;
-            for (r = sizeNewArray; r > i/*- 1*/; r--) {
-                array[r] = array[r - 1];
-            }
-            array[i] = 4;
-            i++;
+    int minValue = array[0];
+    int indexMinValue = 0;
+    for (int i = 0; i < sizeArray; i++) {
+        if (array[i] < minValue) {
+            minValue = array[i];
+            indexMinValue = i;
         }
     }
     
-    cout << "\n\nArray with number 4 before even numbers : ";
-    for (int i = 0; i < sizeNewArray; i++) {
-        cout << array[i] << "  ";
+    int maxValue = array[0];
+    int indexMaxValue = 0;
+    for (int i = 0; i < sizeArray; i++) {
+        if (array[i] > maxValue) {
+            maxValue = array[i];
+            indexMaxValue = i;
+        }
     }
-    cout << endl;
+    
+    cout << "\nMinimum value - " << minValue << " (index - " << indexMinValue << "), \nMaximum value - " << maxValue << " (index - " << indexMaxValue << ")";
+    
+    cout << "\n\nNew array : ";
+    
+    if (indexMinValue < indexMaxValue) {
+        for (int i = indexMaxValue - 1; i > indexMinValue; i--) {
+            cout << array[i] << ' ';
+        }
+    } else if (indexMinValue > indexMaxValue) {
+        for (int i = indexMinValue + 1; i > indexMaxValue; i--) {
+            cout << array[i] << ' ';
+        }
+    }
     
     return 0;
 }

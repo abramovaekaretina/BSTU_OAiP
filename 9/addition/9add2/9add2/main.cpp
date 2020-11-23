@@ -5,6 +5,8 @@
 //  Created by Ekaterina Abramova on 02.11.2020.
 //
 
+//  Определить, содержится ли в заданном массиве хотя бы одно число Фибоначчи
+
 #include <iostream>
 #include <ctime>
 
@@ -14,46 +16,42 @@ int main(int argc, const char * argv[]) {
     
     setlocale(LC_CTYPE, "Russian");
     const int n = 100;
-    int array[n];
-    int sizeArray, sizeNewArray = 1, r;
+    int array[n], arrayFib[12];
+    int sizeArray, count = 0;
     cout << "Enter size array : ";
     cin >> sizeArray;
     srand(time(NULL));
-    
+
+    arrayFib[0] = 0;
+    arrayFib[1] = 1;
+
     cout << "\nArray : ";
     for (int i = 0; i < sizeArray; i++) {
         array[i] = rand() % 100 + 1;
         cout << array[i] << ' ';
     }
-    
-    for (int i = 1, j = 1; i < sizeArray; i++) {
-        if (i % 7 != 0) {
-            array[j++] = array[i];
-            sizeNewArray++;
-        }
+
+    cout << "\nFibonacci number : ";
+    for (int i = 2; i < 12; i++) {
+        arrayFib[i] = arrayFib[i - 1] + arrayFib[i - 2];
     }
-    cout << "\n\nArray after deleting : ";
-    for (int i = 0; i < sizeNewArray; i++) {
-        cout << array[i] << ' ';
+    for (int i = 0; i < 12; i++) {
+        cout << arrayFib[i] << ' ';
     }
-    
-    for (int i = 0; i < sizeNewArray; i++) {
-        if (array[i] % 2 != 0) {
-            sizeNewArray++;
-            for (r = sizeNewArray; r > i/*- 1*/; r--) {
-                array[r] = array[r - 1];
+    for (int i = 0; i < sizeArray; i++) {
+        for (int j = 0; j < 12; j++) {
+            if (array[i] == arrayFib[j]) {
+                count++;
             }
-            array[i] = 4;
-            i++;
         }
     }
-    
-    cout << "\n\nArray with number 4 before even numbers : ";
-    for (int i = 0; i < sizeNewArray; i++) {
-        cout << array[i] << "  ";
+
+    if (count) {
+        cout << "\nThe Fibonacci number is in the array";
+    } else {
+        cout << "\nThe Fibonacci number isn't in the array";
     }
     cout << endl;
     
     return 0;
 }
-
