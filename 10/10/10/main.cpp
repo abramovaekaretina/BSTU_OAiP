@@ -49,7 +49,7 @@ int main(int argc, const char * argv[]) {
 
     cout << "Number A in binary notation = " << getBin(a) << endl;
     cout << "Number B in binary notation = " << getBin(b) << endl;
-    
+
     cout << "Enter number of position, p = ";
     cin >> p;
     cout << "Enter number bits for invert, n = ";
@@ -65,14 +65,14 @@ int main(int argc, const char * argv[]) {
     cin >> q;
 //    _itoa_s((a & mask) >> 1, tmp, 2);
     cout << "Searching bits А: " << getBin((a & mask) >> 1) << endl;
-    
+
     int newMask = ~mask >> q;
 //    _itoa_s(newMask, tmp, 2);
     cout << "Mask for B: " << getBin(newMask) << endl;
-    
+
 //    _itoa_s(b & newMask, tmp, 2);
     cout << "Clean bits in B: " << getBin(b & newMask) << endl;
-    
+
 //    _itoa_s(((b & newMask) | ((a & mask) >> 1)), tmp, 2);
     cout << "Result B = " << getBin(((b & newMask) | ((a & mask) >> 1))) << endl;
 

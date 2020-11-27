@@ -44,7 +44,6 @@ int main(int argc, const char * argv[]) {
     int maskA = 14,
 //        maskA = int(pow(2, 3) - 1) << n,
         maskB = ~maskA >> 1;
-//  int A, B, n, m, maskA = 14;
     cout << "Enter А : ";
     cin >> A;
     cout << "Enter В : ";

@@ -27,20 +27,20 @@ int getBin(int value) {
 
 int main(int argc, const char * argv[]) {
     
-//    int a, b;
-//    int maskA = 31 << 2,
-//        maskB = ~(31 << 3);
-//    cout << "Enter A: ";
-//    cin >> a;
-//    cout << "Enter B: ";
-//    cin >> b;
-//    cout << "\nA = " << getBin(a) << endl;
-//    cout << "B = " << getBin(b) << endl;
-//    a &= maskA;
-//    a <<= 1;
-//    b &= maskB;
-//    b |= a;
-//    cout << "Result - " << getBin(b) << endl;
+    int a, b;
+    int maskA = 31 << 2,
+        maskB = ~(31 << 3);
+    cout << "Enter A: ";
+    cin >> a;
+    cout << "Enter B: ";
+    cin >> b;
+    cout << "\nA = " << getBin(a) << endl;
+    cout << "B = " << getBin(b) << endl;
+    a &= maskA;
+    a <<= 1;
+    b &= maskB;
+    b |= a;
+    cout << "Result - " << getBin(b) << endl;
     
     
     int A, position, n;

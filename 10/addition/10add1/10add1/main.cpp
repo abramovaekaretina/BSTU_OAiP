@@ -46,7 +46,8 @@ int main(int argc, const char * argv[]) {
     cin >> p;
     cout << "Enter number n : ";
     cin >> n;
-    int mask = (int(pow(2, n) - 1)), maskA = (mask << p);
+    int mask = (int(pow(2, n) - 1)),
+        maskA = (mask << p);
 //    _itoa_s(a, tmp, 2);
     cout << "\nA = " << getBin(a) << endl;
 //    _itoa_s(a | maskA, tmp, 2);
