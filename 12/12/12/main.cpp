@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-
+//              WITH POINTERS
 
 //    if (k < n1) {
 //        for (i = 0; i < n2; i++) {

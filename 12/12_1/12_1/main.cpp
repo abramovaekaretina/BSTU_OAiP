@@ -38,6 +38,8 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
+//              WITH POINTERS
+
 //    for (int i = 0; i < N; i++) {
 //        if (i == m) {
 //            for (int j = 0; j < k; j++) {

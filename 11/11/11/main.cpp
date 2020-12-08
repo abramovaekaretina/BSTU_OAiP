@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
     }
     cout << "\nAn array containing multiples of m : ";
     for (int j = 0; j < i; j++) {
-        cout << str[j] << " ";
+        cout << *(str + j) << " ";
     }
     cout << endl;
 

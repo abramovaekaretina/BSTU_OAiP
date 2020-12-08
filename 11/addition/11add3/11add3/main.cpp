@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
     }
     for (p = array; p < q; ++p){
         if (*p != p - array + 1) {
-            cout << "\nSmallest natural number in sequence : " << p - array + 1;
+            cout << "\nSmallest natural number isnit sequence : " << p - array + 1;
             break;
         }
     }

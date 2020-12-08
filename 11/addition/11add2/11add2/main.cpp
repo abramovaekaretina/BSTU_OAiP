@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *iargv[]) {
     const int n = 14;
     int k;
     cout << "Enter K : ";
@@ -27,17 +27,14 @@ int main(int argc, const char * argv[]) {
         cout << *(array + i) << ' ';
         if (*(array + i) == k) {
             *(equalArray + (sizeEqualArray++)) = i + 1;
-//            *(equalArray + (sizeEqualArray++)) = *(array + i);
         } else if (*(array + i) > k) {
             *(moreArray + (sizeMoreArray++)) = i + 1;
-//            *(moreArray + (sizeMoreArray++)) = *(array + i);
         } else if (*(array + i) < k) {
             *(lessArray + (sizeLessArray++)) = i + 1;
-//            *(lessArray + (sizeLessArray++)) = *(array + i);
         }
     }
     
-    cout << "\nEqual "<< k << " (indexes) : ";
+    cout << "\n\nEqual "<< k << " (indexes) : ";
     for (int i = 0; i < sizeEqualArray; i++) {
         cout << *(equalArray + i) << ' ';
     }
