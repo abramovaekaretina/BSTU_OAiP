@@ -22,15 +22,15 @@ int main(int argc, const char * argv[]) {
     
     int number;
     do {
-    cout << "Enter number of task - ";
+    cout << "\nEnter number of task - ";
     cin >> number;
         switch (number) {
             case 1:
-                cout << "\n    FIRST TASK";
+                cout << "\n    FIRST TASK\n";
                 firstTask();
                 break;
             case 2:
-                cout << "\n    SECOND TASK";
+                cout << "\n    SECOND TASK\n";
                 secondTask();
                 break;
         }
@@ -41,20 +41,22 @@ int main(int argc, const char * argv[]) {
 
 void firstTask() {
     int n, average = 0, count = 0;
-    cout << "Input size of array: ";
+    cout << "\nInput size of array: ";
     cin >> n;
     float *a;
     a = (float*)calloc(n, sizeof(float));
-    for (float* i = a; i < a + n; i++) {
-        average += *i;
+    for (int i = 0; i < n; i++) {
+        a[i] = rand() % 20 + 1;
+        average += a[i];
+        cout << a[i] << " ";
     }
     average /= n;
-    for (float* i = a; i < a + n; i++) {
-        if (*i > average) {
+    for (int i = 0; i < n; i++) {
+        if (a[i] > average) {
             count++;
         }
     }
-    cout << "Elements more average - " << count;
+    cout << "\nAverage - " << average << "\nElements more average - " << count << endl;
     free(a);
 
 }
@@ -70,13 +72,15 @@ void secondTask() {
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++){
             a[i][j] = -14 + rand() % 30;
+        }
+    }
+    a[4][2] = 0;
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < m; j++){
             cout << a[i][j] << "\t";
         }
         cout << "\n";
     }
-    a[4][2] = 0;
-//    a[6][5] = 20;
-//    a[2][3] = 20;
     int countRows = 0, max = a[0][0], maxCount = 0;
     for (int i = 0; i < n; i++) {
         int count = 0;

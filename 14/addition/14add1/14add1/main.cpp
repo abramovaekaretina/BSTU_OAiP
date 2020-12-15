@@ -51,14 +51,12 @@ void firstTask() {
             min = i;
         }
     }
-    if (flag == true) {
+    if (flag) {
         cout << "Array: ";
         for (int i = 0; i < size; i++){
             cout << A[i] << " ";
             if (A[i] < 0 && A[i] > A[min]) {
                 min = i;
-            } else {
-                cout << "Negative numbers not found.";
             }
         }
         cout << "\nThe biggest negative number in array[" << min << "] = " << A[min] << "\n";
@@ -125,6 +123,4 @@ void secondTask() {
     delete []B;
     delete []C;
     
-    
-
 }
