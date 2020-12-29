@@ -55,10 +55,11 @@ int getNumberOfColumn() {
         for (int j = 0; j < m; j++) {
             if (A[i][j] == 0) {
                 column += ++j;
+                break;
             }
         }
     }
-    cout << "Column number that contains zero - " << column;
+    cout << "Number of column that contains zero - " << column;
     delete[]A;
 
     return 0;
